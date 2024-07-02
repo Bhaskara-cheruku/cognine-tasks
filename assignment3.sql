@@ -114,7 +114,6 @@ aggregated_data AS (
     SELECT 
         service_type,
         service_status,
-        center,
         MAX(age_years) AS max_age_years,
         MAX(age_months) AS max_age_months,
         MIN(age_years) AS min_age_years,
@@ -128,7 +127,7 @@ aggregated_data AS (
         AVG(service_years) AS avg_service_years,
         AVG(service_months) AS avg_service_months
     FROM age_service_calculations
-    GROUP BY service_type, service_status, center
+    GROUP BY service_type, service_status
 )
 SELECT 
     service_type,
